@@ -1,0 +1,55 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.modal {
+  position: relative; /* Add this line */
+  background: var(--gradient-45deg);
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  pointer-events: auto;
+}
+
+.modal-close-button {
+  display: none; /* Hide the close button by default */
+  position: absolute;
+  bottom: 50px; /* Move the button to the bottom */
+  border: none;
+  font-size: 1.5em;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  transition: background 0.3s;
+}
+
+@media screen and (max-width: 600px) {
+  .modal {
+    display: flex; /* Make the modal a flex container */
+    flex-direction: column; /* Stack the children vertically */
+    justify-content: center; /* Center the children vertically */
+    align-items: center; /* Center the children horizontally */
+    width: 100%; /* Cover the whole screen width */
+    height: 100%; /* Cover the whole screen height */
+    border-radius: 0; /* Remove the border radius */
+    padding: 40px 20px 20px 20px; /* Increase the top padding to give space for the close button */
+  }
+
+  .modal-close-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

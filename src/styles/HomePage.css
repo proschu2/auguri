@@ -1,0 +1,30 @@
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.glassenz {
+  animation: rotate 20s linear infinite;
+  max-height: min(70vh, 70vw);
+}
+
+.sanzio30 {
+  font-size: 3em;
+  color: white;
+  text-align: center;
+  padding: 5%;
+  background-color: black;
+  border-radius: 0;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
