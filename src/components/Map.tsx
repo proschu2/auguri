@@ -7,7 +7,7 @@ import { RefreshCw, Plus, Minus } from "react-feather";
 import "../styles/Map.css";
 
 const INITIAL_ZOOM = 16;
-const WIDTH_LIMIT = 600;
+const WIDTH_LIMIT = 768;
 
 const Map: React.FC<{ loc: location }> = ({ loc }) => {
   const provider =

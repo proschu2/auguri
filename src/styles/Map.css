@@ -1,6 +1,6 @@
 .zoom-reset-controls {
   position: absolute;
-  bottom: 10em; /* Adjust as needed */
+  bottom: 10em;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -18,7 +18,7 @@
   display: flex;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
   .zoom-reset-controls {
     gap: 1em;
     bottom: 1em;
