@@ -1399,6 +1399,7 @@ __metadata:
     eslint: "npm:^8.55.0"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-refresh: "npm:^0.4.5"
+    pigeon-maps: "npm:^0.21.3"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-feather: "npm:^2.0.10"
@@ -2965,6 +2966,15 @@ __metadata:
   version: 2.3.1
   resolution: "picomatch@npm:2.3.1"
   checksum: 26c02b8d06f03206fc2ab8d16f19960f2ff9e81a658f831ecb656d8f17d9edc799e8364b1f4a7873e89d9702dff96204be0fa26fe4181f6843f040f819dac4be
+  languageName: node
+  linkType: hard
+
+"pigeon-maps@npm:^0.21.3":
+  version: 0.21.3
+  resolution: "pigeon-maps@npm:0.21.3"
+  peerDependencies:
+    react: "*"
+  checksum: c84ac985fe062c0f679a34b7d2bc2510170c0cf512a6106e0eb252bbf8950cffc5e375dcfd13c2e9a70bbb0c0d6a1cb383e3afe26f408df650385f8959a84d61
   languageName: node
   linkType: hard
 

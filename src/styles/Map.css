@@ -1,0 +1,26 @@
+.zoom-reset-controls {
+  position: absolute;
+  bottom: 10em; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2em;
+}
+
+.zoom-reset-controls button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+@media screen and (min-width: 600px) {
+  .zoom-reset-controls {
+    gap: 1em;
+    bottom: 1em;
+  }
+}

@@ -1,10 +1,15 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/DigitForm.css";
-const DigitForm: React.FC = () => {
-  const [digit1, setDigit1] = useState("");
-  const [digit2, setDigit2] = useState("");
-  const [digit3, setDigit3] = useState("");
-  const [digit4, setDigit4] = useState("");
+import data from "../assets/data/locations.json";
+import Map from "./Map";
+
+const CodeForm: React.FC<{
+  setMapContent: (content: React.ReactNode) => void;
+}> = ({ setMapContent }) => {
+  const [char1, setChar1] = useState("");
+  const [char2, setChar2] = useState("");
+  const [char3, setChar3] = useState("");
+  const [char4, setChar4] = useState("");
 
   const input1 = useRef<HTMLInputElement>(null);
   const input2 = useRef<HTMLInputElement>(null);
@@ -16,8 +21,8 @@ const DigitForm: React.FC = () => {
     setInput: React.Dispatch<React.SetStateAction<string>>,
     nextInput?: React.RefObject<HTMLInputElement>
   ) => {
-    if (e.target.value.match(/\d/)) {
-      setInput(e.target.value);
+    if (e.target.value.match(/[a-zA-Z0-9]/)) {
+      setInput(e.target.value.toUpperCase());
       if (nextInput && nextInput.current) {
         nextInput.current.focus();
       }
@@ -42,19 +47,22 @@ const DigitForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    const otp = `${digit1}${digit2}${digit3}${digit4}`;
+    const otp = `${char1}${char2}${char3}${char4}`;
     validateOTP(otp);
   };
 
   const validateOTP = (otp: string) => {
-    const validOTPs = ["1234", "5678", "9012"]; // replace with your valid OTPs
-    if (validOTPs.includes(otp)) {
-      alert("OTP is valid");
+    const loc = data.find((location) => location.id === otp);
+    if (loc) {
+      setMapContent(<Map loc={loc} />);
     } else {
-      alert("OTP is invalid");
+      alert("The code is invalid");
     }
   };
 
+  useEffect(() => {
+    input1.current && input1.current.focus();
+  }, []);
   return (
     <form onSubmit={handleSubmit} className="otp-form">
       <div className="otp-inputs">
@@ -62,9 +70,9 @@ const DigitForm: React.FC = () => {
           className="otp-input"
           ref={input1}
           type="text"
-          value={digit1}
-          onChange={(e) => handleChange(e, setDigit1, input2)}
-          onKeyDown={(e) => handleKeyDown(e, setDigit1)}
+          value={char1}
+          onChange={(e) => handleChange(e, setChar1, input2)}
+          onKeyDown={(e) => handleKeyDown(e, setChar1)}
           required
           maxLength={1}
         />
@@ -72,9 +80,9 @@ const DigitForm: React.FC = () => {
           className="otp-input"
           ref={input2}
           type="text"
-          value={digit2}
-          onChange={(e) => handleChange(e, setDigit2, input3)}
-          onKeyDown={(e) => handleKeyDown(e, setDigit2, input1, setDigit1)}
+          value={char2}
+          onChange={(e) => handleChange(e, setChar2, input3)}
+          onKeyDown={(e) => handleKeyDown(e, setChar2, input1, setChar1)}
           required
           maxLength={1}
         />
@@ -82,9 +90,9 @@ const DigitForm: React.FC = () => {
           className="otp-input"
           ref={input3}
           type="text"
-          value={digit3}
-          onChange={(e) => handleChange(e, setDigit3, input4)}
-          onKeyDown={(e) => handleKeyDown(e, setDigit3, input2, setDigit2)}
+          value={char3}
+          onChange={(e) => handleChange(e, setChar3, input4)}
+          onKeyDown={(e) => handleKeyDown(e, setChar3, input2, setChar2)}
           required
           maxLength={1}
         />
@@ -92,9 +100,9 @@ const DigitForm: React.FC = () => {
           className="otp-input"
           ref={input4}
           type="text"
-          value={digit4}
-          onChange={(e) => handleChange(e, setDigit4)}
-          onKeyDown={(e) => handleKeyDown(e, setDigit4, input3, setDigit3)}
+          value={char4}
+          onChange={(e) => handleChange(e, setChar4)}
+          onKeyDown={(e) => handleKeyDown(e, setChar4, input3, setChar3)}
           required
           maxLength={1}
         />
@@ -106,4 +114,4 @@ const DigitForm: React.FC = () => {
   );
 };
 
-export default DigitForm;
+export default CodeForm;

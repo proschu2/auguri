@@ -29,11 +29,10 @@
 .modal-close-button {
   display: none; /* Hide the close button by default */
   position: absolute;
-  bottom: 50px; /* Move the button to the bottom */
+  bottom: 5em; /* Move the button to the bottom */
   border: none;
   font-size: 1.5em;
   border: none;
-  color: white;
   border-radius: 5px;
   cursor: pointer;
   padding: 5px;

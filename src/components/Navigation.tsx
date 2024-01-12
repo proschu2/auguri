@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Navigation.css";
 import { Menu, Minimize } from "react-feather";
-import DigitForm from "./DigitForm";
+import CodeForm from "./CodeForm";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 
 interface NavigationProps {
@@ -32,7 +32,13 @@ const Navigation: React.FC<NavigationProps> = ({ setModalContent }) => {
       {isOpen && (
         <ul className={`nav-links`}>
           <li>
-            <a onClick={() => handleLinkClick(<DigitForm />)}>Digit</a>
+            <a
+              onClick={() =>
+                handleLinkClick(<CodeForm setMapContent={handleLinkClick} />)
+              }
+            >
+              Code
+            </a>
           </li>
         </ul>
       )}
