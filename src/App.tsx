@@ -7,12 +7,15 @@ import Modal from "./components/Modal";
 
 function App() {
   const [modalContent, setModalContent] = useState<React.ReactNode>(null);
-
+  const [pageContent, setPageContent] = useState<React.ReactNode>(<HomePage />);
   return (
     <div className="background-wrapper">
       <div className="App">
-        <Navigation setModalContent={setModalContent} />
-        <HomePage />
+        <Navigation
+          setModalContent={setModalContent}
+          setPageContent={setPageContent}
+        />
+        {pageContent}
         <Modal isOpen={!!modalContent} onClose={() => setModalContent(null)}>
           {modalContent}
         </Modal>

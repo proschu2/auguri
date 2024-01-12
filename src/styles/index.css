@@ -51,11 +51,16 @@ code {
 }
 
 a {
-  font-weight: 500;
-  color: rgba(184, 20, 24, 0.87);
-  text-decoration: inherit;
+  background: var(--gradient-45deg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+a:hover {
+  background: var(--gradient-45deg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 body {
   margin: 0;
   display: flex;
@@ -94,7 +99,10 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    background: var(--gradient-45deg);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   button {
     background-color: #f9f9f9;

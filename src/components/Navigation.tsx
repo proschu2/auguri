@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Navigation.css";
-import { Menu, Minimize } from "react-feather";
+import {
+  Menu,
+  Minimize,
+  Home,
+  Calendar,
+  BookOpen,
+  Navigation as NavigationIcon,
+} from "react-feather";
 import CodeForm from "./CodeForm";
 import useWindowDimensions from "../hooks/useWindowDimensions";
+import EventInfo from "./EventInfo";
+import HomePage from "./HomePage";
 
 interface NavigationProps {
   setModalContent: (content: React.ReactNode) => void;
+  setPageContent: (content: React.ReactNode) => void;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ setModalContent }) => {
+const Navigation: React.FC<NavigationProps> = ({
+  setModalContent,
+  setPageContent,
+}) => {
   const { width } = useWindowDimensions();
   const [isOpen, setIsOpen] = useState(width >= 768);
 
@@ -22,6 +35,18 @@ const Navigation: React.FC<NavigationProps> = ({ setModalContent }) => {
 
   return (
     <nav className={`nav ${isOpen ? "open" : ""}`}>
+      <svg width="0" height="0">
+        <linearGradient id="rainbow" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop stopColor="#007ccc" offset="0%" />
+          <stop stopColor="#25badc" offset="14%" />
+          <stop stopColor="#74d2d9" offset="28%" />
+          <stop stopColor="#ade1b9" offset="42%" />
+          <stop stopColor="#74d2d9" offset="56%" />
+          <stop stopColor="#e5e47a" offset="70%" />
+          <stop stopColor="#f8cd83" offset="84%" />
+          <stop stopColor="#ff86dd" offset="100%" />
+        </linearGradient>
+      </svg>
       <a href="/">
         <img
           className="nav-logo"
@@ -31,13 +56,24 @@ const Navigation: React.FC<NavigationProps> = ({ setModalContent }) => {
       </a>
       {isOpen && (
         <ul className={`nav-links`}>
+          {" "}
+          <li>
+            <a onClick={() => setPageContent(<HomePage />)}>
+              <Home style={{ stroke: "url(#rainbow)" }} />
+            </a>
+          </li>
+          <li>
+            <a onClick={() => setPageContent(<EventInfo />)}>
+              <BookOpen style={{ stroke: "url(#rainbow)" }} />
+            </a>
+          </li>
           <li>
             <a
               onClick={() =>
                 handleLinkClick(<CodeForm setMapContent={handleLinkClick} />)
               }
             >
-              Code
+              <NavigationIcon style={{ stroke: "url(#rainbow)" }} />
             </a>
           </li>
         </ul>

@@ -16,10 +16,9 @@ const Map: React.FC<{ loc: location }> = ({ loc }) => {
       ? maptiler(import.meta.env.VITE_MAPTILER_API_KEY, "basic-v2-light")
       : osm;
 
-  console.log("provider", provider);
   let { height, width } = useWindowDimensions();
   if (width > WIDTH_LIMIT) {
-    height = 0.4 * height;
+    height = 0.8 * height;
     width = Math.min(WIDTH_LIMIT, 0.8 * width);
   }
   const center: [number, number] = [loc.lat, loc.lon];
@@ -37,8 +36,7 @@ const Map: React.FC<{ loc: location }> = ({ loc }) => {
         zoom={zoom}
         minZoom={15}
         maxZoom={18}
-        onBoundsChanged={({ center, zoom, initial }) => {
-          console.log(center, zoom, initial);
+        onBoundsChanged={({ zoom }) => {
           setZoom(zoom);
         }}
       >

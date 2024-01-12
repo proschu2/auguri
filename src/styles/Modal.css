@@ -23,7 +23,9 @@
   width: 80%;
   max-width: var(--width-limit);
   min-height: 40%;
+  max-height: 80%;
   pointer-events: auto;
+  overflow: auto;
 }
 
 .modal-close-button {
