@@ -21,6 +21,7 @@ const Map: React.FC<{ loc: location }> = ({ loc }) => {
     height = 0.8 * height;
     width = Math.min(WIDTH_LIMIT, 0.8 * width);
   }
+  const [refreshKey, setRefreshKey] = useState(0);
   const INITIAL_CENTER: [number, number] = [loc.lat, loc.lon];
 
   const [center, setCenter] = useState<[number, number]>(INITIAL_CENTER);
@@ -29,6 +30,7 @@ const Map: React.FC<{ loc: location }> = ({ loc }) => {
   return (
     <div>
       <PigeonMap
+        key={refreshKey}
         provider={provider}
         attribution={false}
         height={height}
@@ -43,19 +45,22 @@ const Map: React.FC<{ loc: location }> = ({ loc }) => {
       >
         <div className="zoom-reset-controls">
           <button
+            id="zoom-in"
             onClick={() => setZoom((prevZoom) => Math.min(prevZoom + 1, 18))}
           >
             <Plus />
           </button>
           <button
+            id="zoom-out"
             onClick={() => setZoom((prevZoom) => Math.max(prevZoom - 1, 15))}
           >
             <Minus />
           </button>
           <button
+            id="refresh"
             onClick={() => {
               setZoom(INITIAL_ZOOM);
-              setCenter(INITIAL_CENTER);
+              setRefreshKey((oldKey) => oldKey + 1);
             }}
           >
             <RefreshCw />
