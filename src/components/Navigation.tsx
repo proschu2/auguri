@@ -4,7 +4,6 @@ import {
   Menu,
   Minimize,
   Home,
-  Calendar,
   BookOpen,
   Navigation as NavigationIcon,
 } from "react-feather";
