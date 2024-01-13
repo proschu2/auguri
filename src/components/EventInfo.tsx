@@ -39,7 +39,7 @@ Loidekjbwkfjhbqd
 
 const EventInfo: React.FC = () => {
   return (
-    <div style={{ textAlign: "left", padding: "20px" }}>
+    <div style={{ textAlign: "left", margin: "20px" }}>
       <ReactMarkdown>{markdown}</ReactMarkdown>
     </div>
   );
