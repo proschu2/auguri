@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "../styles/DigitForm.css";
+import "../styles/CodeForm.css";
 import data from "../assets/data/locations.json";
 import Map from "./Map";
 
@@ -56,7 +56,8 @@ const CodeForm: React.FC<{
     if (loc) {
       setMapContent(<Map loc={loc} />);
     } else {
-      alert("The code is invalid");
+      alert("Sbagliato, riprova!");
+      input4.current && input4.current.focus();
     }
   };
 
@@ -65,6 +66,7 @@ const CodeForm: React.FC<{
   }, []);
   return (
     <form onSubmit={handleSubmit} className="otp-form">
+      <h1 className="otp-title">codice</h1>
       <div className="otp-inputs">
         <input
           className="otp-input"
