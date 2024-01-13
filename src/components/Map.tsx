@@ -21,8 +21,9 @@ const Map: React.FC<{ loc: location }> = ({ loc }) => {
     height = 0.8 * height;
     width = Math.min(WIDTH_LIMIT, 0.8 * width);
   }
-  const center: [number, number] = [loc.lat, loc.lon];
+  const INITIAL_CENTER: [number, number] = [loc.lat, loc.lon];
 
+  const [center, setCenter] = useState<[number, number]>(INITIAL_CENTER);
   const [zoom, setZoom] = useState<number>(INITIAL_ZOOM);
 
   return (
@@ -51,7 +52,12 @@ const Map: React.FC<{ loc: location }> = ({ loc }) => {
           >
             <Minus />
           </button>
-          <button onClick={() => setZoom(INITIAL_ZOOM)}>
+          <button
+            onClick={() => {
+              setZoom(INITIAL_ZOOM);
+              setCenter(INITIAL_CENTER);
+            }}
+          >
             <RefreshCw />
           </button>
         </div>

@@ -1,10 +1,10 @@
 .zoom-reset-controls {
   position: absolute;
-  bottom: 10em;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 1em;
+  left: 1em;
   display: flex;
-  gap: 2em;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .zoom-reset-controls button {
@@ -16,11 +16,6 @@
   align-items: center;
   justify-content: center;
   display: flex;
-}
-
-@media screen and (min-width: 768px) {
-  .zoom-reset-controls {
-    gap: 1em;
-    bottom: 1em;
-  }
+  background: var(--gradient-45deg);
+  z-index: 999;
 }
