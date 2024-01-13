@@ -46,6 +46,7 @@ const Navigation: React.FC<NavigationProps> = ({
           className="nav-logo"
           src="images/sanzio_wavy.webp"
           alt="Sanzio 30"
+          loading="lazy"
         />
       </a>
       {isOpen && (
@@ -72,7 +73,11 @@ const Navigation: React.FC<NavigationProps> = ({
           </li>
         </ul>
       )}
-      <button className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+      <button
+        className="hamburger"
+        name="menu"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         {isOpen ? <Minimize /> : <Menu />}
       </button>
     </nav>
