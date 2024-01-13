@@ -24,7 +24,6 @@ const Map: React.FC<{ loc: location }> = ({ loc }) => {
   const [refreshKey, setRefreshKey] = useState(0);
   const INITIAL_CENTER: [number, number] = [loc.lat, loc.lon];
 
-  const [center, setCenter] = useState<[number, number]>(INITIAL_CENTER);
   const [zoom, setZoom] = useState<number>(INITIAL_ZOOM);
 
   return (
@@ -35,7 +34,7 @@ const Map: React.FC<{ loc: location }> = ({ loc }) => {
         attribution={false}
         height={height}
         width={width}
-        center={center}
+        center={INITIAL_CENTER}
         zoom={zoom}
         minZoom={15}
         maxZoom={18}
@@ -66,7 +65,7 @@ const Map: React.FC<{ loc: location }> = ({ loc }) => {
             <RefreshCw />
           </button>
         </div>
-        <Overlay anchor={center} offset={[37.5, 37.5]}>
+        <Overlay anchor={INITIAL_CENTER} offset={[37.5, 37.5]}>
           <img
             src="images/sanzio_wavy.webp"
             height={75}
