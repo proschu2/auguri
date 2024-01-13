@@ -30,13 +30,14 @@ const CodeForm: React.FC<{
   };
   const handleKeyDown = (
     e: React.KeyboardEvent<HTMLInputElement>,
+    input: string,
     setInput: React.Dispatch<React.SetStateAction<string>>,
     prevInput?: React.RefObject<HTMLInputElement>,
     setPrevInput?: React.Dispatch<React.SetStateAction<string>>
   ) => {
     if (e.key === "Backspace" || e.key === "Delete") {
       setInput("");
-      if (prevInput && prevInput.current) {
+      if (input == "" && prevInput && prevInput.current) {
         prevInput.current.focus();
         if (setPrevInput) {
           setPrevInput("");
@@ -74,7 +75,7 @@ const CodeForm: React.FC<{
           type="text"
           value={char1}
           onChange={(e) => handleChange(e, setChar1, input2)}
-          onKeyDown={(e) => handleKeyDown(e, setChar1)}
+          onKeyDown={(e) => handleKeyDown(e, char1, setChar1)}
           required
           maxLength={1}
         />
@@ -84,7 +85,7 @@ const CodeForm: React.FC<{
           type="text"
           value={char2}
           onChange={(e) => handleChange(e, setChar2, input3)}
-          onKeyDown={(e) => handleKeyDown(e, setChar2, input1, setChar1)}
+          onKeyDown={(e) => handleKeyDown(e, char2, setChar2, input1, setChar1)}
           required
           maxLength={1}
         />
@@ -94,7 +95,7 @@ const CodeForm: React.FC<{
           type="text"
           value={char3}
           onChange={(e) => handleChange(e, setChar3, input4)}
-          onKeyDown={(e) => handleKeyDown(e, setChar3, input2, setChar2)}
+          onKeyDown={(e) => handleKeyDown(e, char3, setChar3, input2, setChar2)}
           required
           maxLength={1}
         />
@@ -104,7 +105,7 @@ const CodeForm: React.FC<{
           type="text"
           value={char4}
           onChange={(e) => handleChange(e, setChar4)}
-          onKeyDown={(e) => handleKeyDown(e, setChar4, input3, setChar3)}
+          onKeyDown={(e) => handleKeyDown(e, char4, setChar4, input3, setChar3)}
           required
           maxLength={1}
         />

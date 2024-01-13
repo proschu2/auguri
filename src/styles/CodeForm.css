@@ -42,11 +42,10 @@
   background: var(--gradient-right);
   color: black;
 }
-
 .otp-title {
   font-size: 2rem;
   margin-bottom: 40px;
   text-align: center;
-  color: var(--gradient-right);
+  color: black !important;
   font-weight: bold;
 }
