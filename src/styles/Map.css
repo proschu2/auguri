@@ -18,4 +18,5 @@
   display: flex;
   background: var(--gradient-45deg);
   z-index: 999;
+  color: black !important;
 }
