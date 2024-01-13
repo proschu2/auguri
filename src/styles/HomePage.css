@@ -7,8 +7,8 @@
 }
 
 .glassenz {
-  animation: rotate 20s linear infinite;
-  max-height: min(70vh, 70vw);
+  animation: rotate 15s linear infinite;
+  max-height: min(50vh, 50vw);
 }
 
 .sanzio30 {
