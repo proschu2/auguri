@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Navigation.css";
-import {
-  Menu,
-  Minimize,
-  Home,
-  BookOpen,
-  Navigation as NavigationIcon,
-} from "react-feather";
+import { Menu, Minimize, Home, BookOpen, Search } from "react-feather";
 import CodeForm from "./CodeForm";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import EventInfo from "./EventInfo";
@@ -48,32 +42,33 @@ const Navigation: React.FC<NavigationProps> = ({
       </svg>
       <a href="/">
         <img
+          height={"2em"}
           className="nav-logo"
           src="images/sanzio_wavy.webp"
           alt="Sanzio 30"
         />
       </a>
       {isOpen && (
-        <ul className={`nav-links`}>
-          {" "}
+        <ul className="nav-links">
           <li>
-            <a onClick={() => setPageContent(<HomePage />)}>
-              <Home style={{ stroke: "url(#rainbow)" }} />
-            </a>
+            <Home
+              onClick={() => setPageContent(<HomePage />)}
+              className="nav-icon"
+            />
           </li>
           <li>
-            <a onClick={() => setPageContent(<EventInfo />)}>
-              <BookOpen style={{ stroke: "url(#rainbow)" }} />
-            </a>
+            <BookOpen
+              onClick={() => setPageContent(<EventInfo />)}
+              className="nav-icon"
+            />
           </li>
           <li>
-            <a
+            <Search
               onClick={() =>
                 handleLinkClick(<CodeForm setMapContent={handleLinkClick} />)
               }
-            >
-              <NavigationIcon style={{ stroke: "url(#rainbow)" }} />
-            </a>
+              className="nav-icon"
+            />
           </li>
         </ul>
       )}
