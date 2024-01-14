@@ -59,7 +59,7 @@ const Navigation: React.FC<NavigationProps> = ({
           </li>
           <li>
             <BookOpen
-              onClick={() => setPageContent(<EventInfo />)}
+              onClick={() => handleLinkClick(<EventInfo />)}
               className="nav-icon"
             />
           </li>
