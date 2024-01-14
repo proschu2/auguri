@@ -7,8 +7,8 @@ import ogPlugin, { Options } from "vite-plugin-open-graph";
 
 const openGraphOptions: Options = {
   basic: {
-    title: "Sanzio 30",
-    description: "Sanzio fa 30 anni",
+    title: "Sanzio fa 30 anni",
+    description: "sito ufficiale",
     url: "https://auguri.sanziomonti.com",
     type: "website",
     image: "https://auguri.sanziomonti.com/images/sanzio_wavy.webp",

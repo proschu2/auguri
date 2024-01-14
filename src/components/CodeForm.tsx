@@ -48,12 +48,12 @@ const CodeForm: React.FC<{
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    const otp = `${char1}${char2}${char3}${char4}`;
-    validateOTP(otp);
+    const code = `${char1}${char2}${char3}${char4}`;
+    validateCode(code);
   };
 
-  const validateOTP = (otp: string) => {
-    const loc = data.find((location) => location.id === otp);
+  const validateCode = (code: string) => {
+    const loc = data.find((location) => location.id === code);
     if (loc) {
       setMapContent(<Map loc={loc} />);
     } else {
@@ -111,7 +111,7 @@ const CodeForm: React.FC<{
         />
       </div>
       <button type="submit" className="submit-button">
-        Submit
+        check
       </button>
     </form>
   );
