@@ -1,7 +1,9 @@
 [
   { "id": "EMOH", "name": "casa", "lat": 47.3792815, "lon": 8.5218593 },
   { "id": "B2CS", "name": "palestra", "lat": 47.37414, "lon": 8.51286 },
-  { "id": "LOKU", "name": "wipkingerpark", "lat": 47.39263, "lon": 8.52119 },
+  { "id": "BTL4", "name": "wipkingerpark", "lat": 47.39263, "lon": 8.52119 },
   { "id": "PB30", "name": "plaza", "lat": 47.3741673, "lon": 8.524726 },
-  { "id": "RHCP", "name": "kir", "lat": 47.3768022, "lon": 8.52612 }
+  { "id": "RHCP", "name": "kir", "lat": 47.3768022, "lon": 8.52612 },
+  { "id": "ZBPT", "name": "bonheur", "lat": 47.37985, "lon": 8.51626 },
+  { "id": "JW04", "name": "joswfwiese", "lat": 47.38584, "lon": 8.52359 }
 ]
