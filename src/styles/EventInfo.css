@@ -1,0 +1,39 @@
+.event-info-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1em;
+  justify-content: start;
+  color: black !important;
+}
+
+.event-label {
+  font-weight: bold;
+  font-size: 1.25em;
+  text-decoration: underline;
+}
+
+.event-title {
+  color: black !important;
+  font-size: 1.5rem;
+}
+
+.event-meteo {
+  font-style: italic;
+  font-size: small;
+  color: black !important;
+  padding-top: 2em;
+}
+
+.event-list {
+  list-style-type: square;
+  margin: 0;
+  padding-inline-start: 1em;
+}
+
+@media (max-width: 768px) {
+  .event-info-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5em;
+  }
+}
