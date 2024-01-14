@@ -1464,6 +1464,7 @@ __metadata:
     typescript: "npm:^5.2.2"
     vite: "npm:^4.1.0-beta.0"
     vite-plugin-favicons-inject: "npm:^2.2.0"
+    vite-plugin-open-graph: "npm:^2.0.4"
     vite-plugin-svgr: "npm:^4.2.0"
     vite-tsconfig-paths: "npm:^4.2.3"
     web-vitals: "npm:3.5.1"
@@ -4372,6 +4373,13 @@ __metadata:
   dependencies:
     favicons: "npm:^7.0.0-beta.4"
   checksum: 52588b36dc0707ce349211f422b62ebfa3e43186f81f5f56763063a583b4b3f0bfacc31d4019d3e2bf4cede20357b7505b79a2309ff89546d2683e1f437c5aa6
+  languageName: node
+  linkType: hard
+
+"vite-plugin-open-graph@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "vite-plugin-open-graph@npm:2.0.4"
+  checksum: 4dc428132481cd91cc47be62def7c123f65763203e8108f52e6cd57d3137df1f46c72872f5fe62424931b9700deb60c3c4d478af942ab624341cfcc782db826b
   languageName: node
   linkType: hard
 

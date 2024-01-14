@@ -43,6 +43,7 @@ const RAW_RUNTIME_STATE =
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
           ["vite", "virtual:0a4480cd7089ac614af100fbc46629280beb5f4deb2fb3e9fac9bd93a826b3a0599423e691514ca628cf6458aa75a9bcc9768468d8d9d75d359bb20c07448ffb#npm:4.5.1"],\
           ["vite-plugin-favicons-inject", "npm:2.2.0"],\
+          ["vite-plugin-open-graph", "npm:2.0.4"],\
           ["vite-plugin-svgr", "virtual:0a4480cd7089ac614af100fbc46629280beb5f4deb2fb3e9fac9bd93a826b3a0599423e691514ca628cf6458aa75a9bcc9768468d8d9d75d359bb20c07448ffb#npm:4.2.0"],\
           ["vite-tsconfig-paths", "virtual:0a4480cd7089ac614af100fbc46629280beb5f4deb2fb3e9fac9bd93a826b3a0599423e691514ca628cf6458aa75a9bcc9768468d8d9d75d359bb20c07448ffb#npm:4.2.3"],\
           ["web-vitals", "npm:3.5.1"],\
@@ -1986,6 +1987,7 @@ const RAW_RUNTIME_STATE =
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
           ["vite", "virtual:0a4480cd7089ac614af100fbc46629280beb5f4deb2fb3e9fac9bd93a826b3a0599423e691514ca628cf6458aa75a9bcc9768468d8d9d75d359bb20c07448ffb#npm:4.5.1"],\
           ["vite-plugin-favicons-inject", "npm:2.2.0"],\
+          ["vite-plugin-open-graph", "npm:2.0.4"],\
           ["vite-plugin-svgr", "virtual:0a4480cd7089ac614af100fbc46629280beb5f4deb2fb3e9fac9bd93a826b3a0599423e691514ca628cf6458aa75a9bcc9768468d8d9d75d359bb20c07448ffb#npm:4.2.0"],\
           ["vite-tsconfig-paths", "virtual:0a4480cd7089ac614af100fbc46629280beb5f4deb2fb3e9fac9bd93a826b3a0599423e691514ca628cf6458aa75a9bcc9768468d8d9d75d359bb20c07448ffb#npm:4.2.3"],\
           ["web-vitals", "npm:3.5.1"],\
@@ -5314,6 +5316,15 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["vite-plugin-favicons-inject", "npm:2.2.0"],\
           ["favicons", "npm:7.1.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["vite-plugin-open-graph", [\
+      ["npm:2.0.4", {\
+        "packageLocation": "../../.yarn/berry/cache/vite-plugin-open-graph-npm-2.0.4-2023a772c4-10c0.zip/node_modules/vite-plugin-open-graph/",\
+        "packageDependencies": [\
+          ["vite-plugin-open-graph", "npm:2.0.4"]\
         ],\
         "linkType": "HARD"\
       }]\
