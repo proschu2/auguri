@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { X } from "react-feather";
+import { AiOutlineClose as X } from "react-icons/ai";
 import "../styles/Modal.css";
 const Modal = ({
   isOpen,

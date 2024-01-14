@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Navigation.css";
-import { Menu, Minimize, Home, BookOpen, Search } from "react-feather";
+import {
+  AiFillInfoCircle as Info,
+  AiFillLock as Lock,
+  AiFillHome as Home,
+  AiOutlineMenu as Menu,
+  AiOutlineClose as Minimize,
+} from "react-icons/ai";
 import CodeForm from "./CodeForm";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import EventInfo from "./EventInfo";
@@ -39,6 +45,24 @@ const Navigation: React.FC<NavigationProps> = ({
           <stop stopColor="#f8cd83" offset="84%" />
           <stop stopColor="#ff86dd" offset="100%" />
         </linearGradient>
+        <linearGradient id="rainbow1">
+          <stop stopColor="#007ccc" offset="0%" />
+          <stop stopColor="#25badc" offset="33%" />
+          <stop stopColor="#74d2d9" offset="66%" />
+          <stop stopColor="#ade1b9" offset="100%" />
+        </linearGradient>
+        <linearGradient id="rainbow2">
+          <stop stopColor="#74d2d9" offset="0%" />
+          <stop stopColor="#ade1b9" offset="33%" />
+          <stop stopColor="#74d2d9" offset="66%" />
+          <stop stopColor="#e5e47a" offset="100%" />
+        </linearGradient>
+        <linearGradient id="rainbow3">
+          <stop stopColor="#74d2d9" offset="0%" />
+          <stop stopColor="#e5e47a" offset="33%" />
+          <stop stopColor="#f8cd83" offset="66%" />
+          <stop stopColor="#ff86dd" offset="100%" />
+        </linearGradient>
       </svg>
       <a href="/">
         <img
@@ -54,21 +78,21 @@ const Navigation: React.FC<NavigationProps> = ({
           <li>
             <Home
               onClick={() => setPageContent(<HomePage />)}
-              className="nav-icon"
+              className="nav-icon rainbow1"
             />
           </li>
           <li>
-            <BookOpen
+            <Info
               onClick={() => handleLinkClick(<EventInfo />)}
-              className="nav-icon"
+              className="nav-icon rainbow2"
             />
           </li>
           <li>
-            <Search
+            <Lock
               onClick={() =>
                 handleLinkClick(<CodeForm setMapContent={handleLinkClick} />)
               }
-              className="nav-icon"
+              className="nav-icon rainbow3"
             />
           </li>
         </ul>

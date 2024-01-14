@@ -53,7 +53,20 @@ ul.nav-links > li {
 .nav-icon {
   width: 30px;
   height: 30px;
-  stroke: url(#rainbow);
+}
+.rainbow1 {
+  stroke: url(#rainbow1);
+  fill: url(#rainbow1);
+}
+
+.rainbow2 {
+  stroke: url(#rainbow2);
+  fill: url(#rainbow2);
+}
+
+.rainbow3 {
+  stroke: url(#rainbow3);
+  fill: url(#rainbow3);
 }
 
 @media (min-width: 768px) {

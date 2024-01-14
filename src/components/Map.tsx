@@ -3,7 +3,11 @@ import { Map as PigeonMap, Overlay } from "pigeon-maps";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import React, { useState } from "react";
 import { location } from "../assets/data/location";
-import { RefreshCw, Plus, Minus } from "react-feather";
+import {
+  AiOutlinePlus as Plus,
+  AiOutlineMinus as Minus,
+  AiOutlineReload as Refresh,
+} from "react-icons/ai";
 import "../styles/Map.css";
 
 const INITIAL_ZOOM = 16;
@@ -62,7 +66,7 @@ const Map: React.FC<{ loc: location }> = ({ loc }) => {
               setRefreshKey((oldKey) => oldKey + 1);
             }}
           >
-            <RefreshCw />
+            <Refresh />
           </button>
         </div>
         <Overlay anchor={INITIAL_CENTER} offset={[37.5, 37.5]}>
