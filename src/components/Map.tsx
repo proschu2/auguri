@@ -27,12 +27,11 @@ const Map: React.FC<{ loc: location }> = ({ loc }) => {
   const [zoom, setZoom] = useState<number>(INITIAL_ZOOM);
 
   return (
-    <div>
+    <div style={{ height: `calc(var(--vh, 1vh) * 100)` }}>
       <PigeonMap
         key={refreshKey}
         provider={provider}
         attribution={false}
-        height={height}
         width={width}
         center={INITIAL_CENTER}
         zoom={zoom}
@@ -41,6 +40,7 @@ const Map: React.FC<{ loc: location }> = ({ loc }) => {
         onBoundsChanged={({ zoom }) => {
           setZoom(zoom);
         }}
+        boxClassname="pigeon-box"
       >
         <div className="zoom-reset-controls">
           <button
